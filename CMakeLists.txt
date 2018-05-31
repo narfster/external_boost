@@ -12,16 +12,9 @@ set(BOOST_LIBRARYDIR ${BOOST_ROOT}/lib)
 find_package (Boost 1.64.0 COMPONENTS system filesystem)
 
 
-
-if (NOT boost_FOUND)
-
-    message("BOOST WAS NOT FOUND 1")
-
-endif()
-
 if (NOT Boost_FOUND)
 
-message("BOOST WAS NOT FOUND 2")
+message("BOOST WAS NOT FOUND 2  ")
 
 
 include(ExternalProject)
@@ -46,12 +39,22 @@ ExternalProject_Add(
 
 else()
 
-    message("BOOST FOUND!!")
+FILE(REMOVE_RECURSE ${BOOST_ROOT}/temp)
+FILE(REMOVE_RECURSE ${BOOST_ROOT}/src)
+FILE(REMOVE_RECURSE ${BOOST_ROOT}/stamp)
 
-    add_executable(external_boost main.cpp)
+message("BOOST FOUND!!!")
 
-    target_link_libraries(external_boost Boost::filesystem)
+add_executable(external_boost main.cpp)
+
+target_link_libraries(external_boost Boost::filesystem)
+
 
 endif()
+
+
+
+
+
 
 
