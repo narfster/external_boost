@@ -13,7 +13,7 @@ find_package( OpenCV 3.4.1 PATHS $ENV{HOME}/CLionProjects/3rdparty/install/openc
 
 add_executable(external_boost main.cpp)
 
-target_link_libraries(external_boost Boost::filesystem)
+target_link_libraries(external_boost Boost::filesystem ${OpenCV_LIBS})
 
 
 
