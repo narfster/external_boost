@@ -29,7 +29,8 @@ if(OpenCV_FOUND)
 endif()
 
 # Set relative path for application to search for shared libs.
-set(CMAKE_INSTALL_RPATH ${Boost_LIBRARY_DIR_RELEASE} ${OpenCV_LIB_DIR})
+set(CMAKE_INSTALL_RPATH ${Boost_LIBRARY_DIR_RELEASE}
+                        ${OpenCV_LIB_DIR})
 
 add_executable(external_boost main.cpp)
 
