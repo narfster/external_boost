@@ -1,0 +1,1 @@
+cmd='./bootstrap.sh;--prefix=/home/dan/CLionProjects/external_boost/boost'
