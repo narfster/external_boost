@@ -12,6 +12,7 @@ find_package (Boost 1.64.0 COMPONENTS system filesystem)
 # find opencv at location
 find_package (OpenCV 3.4.1 PATHS $ENV{HOME}/dev/3rdparty/opencv)
 
+
 if(Boost_FOUND)
     message("=== Boost found ===")
     message(Boost_LIBRARY_DIR = ${Boost_LIBRARY_DIR})
@@ -26,6 +27,7 @@ if(OpenCV_FOUND)
     message("OpenCV_INCLUDE_DIRS = " ${OpenCV_INCLUDE_DIRS})
     message("Use as shared lib?  = " ${OpenCV_SHARED})
     SET(OpenCV_LIB_DIR "${OpenCV_INSTALL_PATH}/lib")
+    message("OpenCV_LIB_DIR  = " ${OpenCV_LIB_DIR})
 endif()
 
 # Set relative path for application to search for shared libs.
